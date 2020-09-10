@@ -8,17 +8,19 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        System.out.print("Enter Principal : ");
-        double principal = scan.nextDouble();
-        System.out.print("Enter Rate : ");
-        double rate = scan.nextDouble();
-        rate =( rate/100)/12;
-        System.out.print("Enter Time : ");
-        int time = scan.nextInt();
-        time = time * 12;
-        double p= (principal * rate) / (1 - Math.pow(1 + rate, -time));
-        //
-        System.out.println("Payment: " + p);
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter Principle : ");
+        double principle = console.nextDouble();
+        System.out.print("Enter years : ");
+        int years = console.nextInt();
+        System.out.print("Enter interest rate   : ");
+        double rate = console.nextDouble();
+        System.out.println();
+
+        int n = 12 * years;
+        double c = rate / 12.0 / 100.0;
+        double payment = principle * c * Math.pow(1 + c, n) /
+                         (Math.pow(1 + c, n) - 1);
+        System.out.println("Mortgage: " + payment);
     }
 }
